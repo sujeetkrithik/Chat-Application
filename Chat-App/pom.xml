@@ -14,7 +14,7 @@
 	<name>Chat-App</name>
 	<description>Chat App Project in Spring Boot</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>19</java.version>
 	</properties>
 	<dependencies>
 
