@@ -2,23 +2,15 @@
 
 var stompClient=null
 
+function sendMessage(){
 
-
-   function sendMessage(){
-
-
-    let jsonOb={
+ let jsonOb={
         name:localStorage.getItem("name"),
         content:$("#message-value").val()
     }
 
     stompClient.send("/app/message",{},JSON.stringify(jsonOb));
-
-
-
    }
-
-
 
 function connect()
 {
@@ -41,38 +33,25 @@ function connect()
                         showMessage(JSON.parse(response.body))
 
                 })
-
-
-
-        })
+  })
 
 }
 
-
- function showMessage(message)
+function showMessage(message)
  {
 
     $("#message-container-table").prepend(`<tr><td><b>${message.name} :</b> ${message.content}</td></tr>`)
-
  }
-
-
-
-
 
 $(document).ready((e)=>{
 
+$("#login").click(()=>{
 
-   $("#login").click(()=>{
-
-
-       let name=$("#name-value").val()
+     let name=$("#name-value").val()
        localStorage.setItem("name",name)
        $("#name-title").html(`Welcome , <b>${name} </b>`)
        connect();
-
-
-   })
+ })
 
    $("#send-btn").click(()=>{
     sendMessage()
