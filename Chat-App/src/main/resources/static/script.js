@@ -40,7 +40,7 @@ function connect()
 function showMessage(message)
  {
 
-    $("#message-container-table").prepend(`<tr><td><b>${message.name} :</b> ${message.content}</td></tr>`)
+    $("#message-container-table").prepend(`<tr><td><b>${message.name} :</b> ${message.content}</td></tr>)
  }
 
 $(document).ready((e)=>{
